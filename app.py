@@ -20,5 +20,7 @@ def create_app():
         response.headers['Refresh'] = '5; url=https://www.youtube.com/watch?v=iUsecpG2bWI'
         return response
 
+    return app
+
     if __name__ == "__main__":
         app.run(host='0.0.0.0', port=80, debug=True)
