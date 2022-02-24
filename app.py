@@ -1,15 +1,15 @@
+import os
 from flask import Flask, Response, send_from_directory
 
 app = Flask('app', static_url_path='')
 
 @app.route('/style.css')
 def stylecss():
-    return send_from_directory('.', path='style.css')
+    return send_from_directory('.', 'style.css')
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')    
+    return send_from_directory('.', 'favicon.ico', mimetype='image/vnd.microsoft.icon')    
 
 @app.route('/')
 def hello_world():
