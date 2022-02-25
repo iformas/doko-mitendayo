@@ -13,6 +13,10 @@ def create_app():
     def favicon():
         return send_from_directory('.', 'favicon.ico', mimetype='image/vnd.microsoft.icon')    
 
+    @app.route('/index.gif')
+    def gif():
+        return send_from_directory('.', 'index.gif', mimetype='image/png')    
+
     @app.route('/')
     def hello_world():
         response = Response()
